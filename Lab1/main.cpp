@@ -30,12 +30,9 @@ ostream& operator << (ostream& stream, UnorderedList& formular)
 
 int main()
 {
-	int x = 0;
 	setlocale(LC_ALL, "Russian");
 
 	UnorderedList Spisok;
-
-	//Spisok.push_back(56);
 
 	cout << Spisok << endl;
 
