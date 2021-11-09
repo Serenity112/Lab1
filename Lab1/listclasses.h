@@ -1,6 +1,7 @@
 #ifndef CLASSES_H
 #define CLASSES_H
 #include <iostream>
+using namespace std;
 
 class Node
 {
@@ -22,8 +23,6 @@ public:
 	void SetNumber(int Number);
 
 	int GetNumber();
-
-	friend std::ostream& operator<< (std::ostream&, const Node*&);
 
 private:
 	Node* _next;
@@ -76,7 +75,7 @@ public:
 
 	void swap(size_t, size_t);
 
-	friend std::ostream& operator << (std::ostream& stream, const UnorderedList& formular);
+	friend ostream& operator << (ostream& stream, const UnorderedList& unorderedlist);
 
 private:
 	void pop_only();

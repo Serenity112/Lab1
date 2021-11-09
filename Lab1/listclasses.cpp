@@ -3,6 +3,9 @@
 using namespace std;
 
 
+
+
+
 Node::Node(int Number, Node* next, Node* prev)
 {
 	SetNumber(Number);
@@ -302,3 +305,37 @@ void UnorderedList::swap(size_t index1, size_t index2)
 	Element2->SetNumber(buf);
 }
 
+
+
+ostream& operator << (ostream& stream, const UnorderedList& unorderedlist)
+{
+
+	if (ifPointerEmpty(unorderedlist._head))
+	{
+		stream << "List is empty!" << endl;
+	}
+	else
+	{
+
+		Node* node = unorderedlist._head;
+
+		while (!(ifPointerEmpty(node)))
+		{
+			stream << node->GetNumber();
+
+			if (!ifPointerEmpty(node->GetNext()))
+			{
+				stream << " -> ";
+				
+			}
+			else
+			{
+				break;
+			}
+			
+			node = node->GetNext();
+		}
+		stream << endl << endl;
+	}
+	return stream;
+}

@@ -2,39 +2,11 @@
 #include "listclasses.h"
 using namespace std;
 
-ostream& operator << (ostream& stream, Node*& element)
-{
-	stream << element->GetNumber();
-	return stream;
-}
-
-ostream& operator << (ostream& stream, UnorderedList& formular)
-{
-	if (ifPointerEmpty(formular.GetHead()))
-	{
-		cout << "List is empty!" << endl;
-	}
-	else
-	{
-		Node* node = formular.GetHead();
-		while (!(ifPointerEmpty(node)))
-		{
-			cout << node << " -> ";
-			node = node->GetNext();
-		}
-		cout << endl << endl;
-	}
-	return stream;
-}
-
-
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 
 	UnorderedList Spisok;
-
-	cout << Spisok << endl;
 
 	int options = 0;
 	int Number = 0;
